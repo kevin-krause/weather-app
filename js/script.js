@@ -1,6 +1,4 @@
 // variaveis
-import { unsplashApi } from './unsplash'
-
 const apiKey = 'f8d93f917d7685ab2268c4296a329c51'
 
 const cityInput = document.querySelector('#city-input')
@@ -36,12 +34,11 @@ const showWeatherData = async city => {
         'src',
         `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
     )
-    console.log(
-        countryElement.setAttribute(
-            'src',
-            `https://flagcdn.com/w320/${data.sys.country.toLowerCase()}.png`
-        )
+    countryElement.setAttribute(
+        'src',
+        `https://flagcdn.com/w320/${data.sys.country.toLowerCase()}.png`
     )
+
     humidityElement.innerText = `${data.main.humidity} %`
     windElement.innerText = `${data.wind.speed} km/h`
 
