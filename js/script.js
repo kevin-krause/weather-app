@@ -1,4 +1,6 @@
 // variaveis
+import { unsplashApi } from './unsplash'
+
 const apiKey = 'f8d93f917d7685ab2268c4296a329c51'
 
 const cityInput = document.querySelector('#city-input')
