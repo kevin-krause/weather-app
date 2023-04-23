@@ -13,6 +13,9 @@ const humidityElement = document.querySelector('#humidity span')
 const windElement = document.querySelector('#wind span')
 const waetherContainer = document.querySelector('#weather-data')
 
+const container = document.querySelector('.container')
+const containerStyles = getComputedStyle(container)
+
 // funções
 
 const getWeatherData = async city => {
@@ -60,4 +63,12 @@ cityInput.addEventListener('keyup', e => {
 
         showWeatherData(city)
     }
+})
+
+document.addEventListener('mousemove', e => {
+    mouseX = e.clientX
+    mouseY = e.clientY
+
+    container.style.setProperty('--x', `${mouseX}px`)
+    container.style.setProperty('--y', `${mouseY}px`)
 })
